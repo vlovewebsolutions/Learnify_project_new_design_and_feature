@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Learnify IIT JEE / NEET</title>
+</head>
+<body>
+<div>
+    <p style="line-height:-20.0em;text-align:center;margin-bottom:0px;color:orange;font-size:40px;">Learnify</p>
+    <p style="line-height:-20.0em;color:blue;text-align:center;font-size:12px;">IIT JEE / NEET</p>
+    <hr>
+</div>
+<div>
+    <table>
+        <tr>
+            <td style="padding:8px;font-size:12px;">Receipt No:{{student.receipt_number}}</td>
+            <td style="text-align:right;padding:8px;font-size:12px;">GSTIN: 06AADCL8820B1ZU</td>
+        </tr>
+        <tr>
+            <td style="border:1px solid black;padding:8px;font-size:12px;"><p>Student Name: {{student.student_name}}</p></td>
+            <td style="border:1px solid black;padding:8px;font-size:12px;"><p>S/o, D/o: {{student.fathers_name}}</p></td>
+        </tr>
+    </table>
+</div>
+<div style="margin-top:12px;">
+    <table>
+        <tr style="border:1px solid black;">
+            <td style="padding:8px;font-size:12px;">Course Detail: {{student.course}}</td>
+        </tr>
+    </table>
+</div>
+<div style="margin-top:12px;">
+    <table>
+        <tr>
+            <td style="font-size:12px;padding:8px;">Received Rs. : {{student.amount_received}}</td>
+            <td style="font-size:12px;width:70%;" >Amount(In Words): {{AmtInWords}} </td>
+        </tr>
+    </table>
+</div>
+<div style="margin-top:12px;">
+    <table>
+        <tr>
+            {% if student.ChequeNumber %}
+            <td style="padding-top:8px;padding-bottom:8px;font-size:12px;">Payment Mode(Cash / UPI / Net Banking): Cheque</td>
+            <td style="padding-top:8px;padding-bottom:8px;font-size:12px;text-align:right;">Cheques No.: {{student.cheque_number}}</td>
+            {% else %}
+            <td style="padding:8px;font-size:12px;">Payment Mode(Cash / UPI / Net Banking): Cash</td>
+            {% endif %}
+            <td style="padding:8px;font-size:12px;text-align:right;">Dated: {{student.date}} </td>
+        </tr>
+    </table>
+</div>
+<div>
+    <table>
+        <tr>
+            <td style="border:1px solid black;font-size:12px;padding:8px;">Bank Name: {{student.bank_name}}</td>
+        </tr>
+    </table>
+</div>
+<div>
+    <table>
+        <tr>
+            <td style="border:1px solid black;font-size:12px;padding:8px;">Fee Against ({{student.fee_against_which_session}}):</td>
+            <td style="border:1px solid black;font-size:12px;padding:8px;">Session-{{Obj2.current_year_of_student}}</td>
+        </tr>
+    </table>
+</div>
+<div style="margin-top:12px;">
+    <table>
+        <tr>
+            <td style="border:1px solid black;font-size:12px;padding:8px;">Session Total Fee:</td>
+            <td style="border:1px solid black;font-size:12px;padding:8px;">{{total_fee_of_session}}</td>
+        </tr>
+        <tr>
+            <td style="border:1px solid black;font-size:12px;padding:8px;">Total Fee Paid till date:</td>
+            <td style="border:1px solid black;font-size:12px;padding:8px;">{{Obj2.fee_paid_by_student}}</td>
+        </tr>
+        <tr>
+            <td style="border:1px solid black;font-size:12px;padding:8px;">Balance due:</td>
+            <td style="border:1px solid black;font-size:12px;padding:8px;">{{Obj2.due_fee_of_student}}</td>
+        </tr>
+    </table>
+</div>
+<div>
+    <p style="color:blue;padding:8px;font-size:12px;">
+        --> FEE PAYMENT AFTER DUE DATE WOULD BE ATTRACT LATE FINE AS PER LEARNIFY EDUWAVE PVT. LTD. INSTITUTE POLICY.
+    </p>
+    <p style="color:blue;padding:8px;font-size:12px;">
+        --> 9% CGST AND 9% SGST IS APPLICABLE ON YOUR TOTAL COURSE FEE.
+    </p>
+</div>
+<div style="margin-top:150px;">
+    <table>
+        <tr>
+            <td></td>
+            <td style="font-size:12px;padding:8px;text-align:right;font-weight:bold;">For LEARNIFY EDUWAVE PVT. LTD.</td>
+        </tr>
+        <tr>
+            <td style="font-size:12px;padding:8px;">Parents Signature</td>
+            <td style="font-size:12px;padding:8px;text-align:right;">Authorised Signatory</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
